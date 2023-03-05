@@ -24,7 +24,12 @@ export const ImageGallery = ({ query, disable }) => {
       api.fetchImages(query, page)
       .then(data => {
         setItems(data.hits)
-        Notiflix.Notify.success(`Всего найдено картинок: ${data.totalHits}`);
+          if (data.hits.length < 1) {
+            Notiflix.Notify.failure(`Nothing found for your request`);
+          }
+          if (data.hits.length > 0) {
+            Notiflix.Notify.success(`Total images found: ${data.totalHits}`);
+          }
         if (data.hits.length > 8) {
           setShowLoadBtn(true)
         }
