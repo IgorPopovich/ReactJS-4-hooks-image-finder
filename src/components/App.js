@@ -14,7 +14,7 @@ export const App = () => {
   
 
     return (
-      <div className='main'>
+      <div className={css.main}>
         <Searchbar onDisable={disableBtn} onSubmit={handleFormSubmit} />
         <ImageGallery disable={setDisableBtn} query={query} />
     </div>
