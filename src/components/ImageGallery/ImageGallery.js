@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Notiflix from 'notiflix';
-import './ImageGallery.css';
+import css from './ImageGallery.module.css';
+import PropTypes from 'prop-types';
 import {ImageGalleryItem} from '../ImageGalleryItem/ImageGalleryItem';
 import { Button } from '../Button/Button';
 import StartLoader from '../StartLoader/StartLoader';
@@ -64,9 +65,9 @@ export const ImageGallery = ({ query, disable }) => {
 
 
   return (
-        <div className='main'>
+        <div className={css.main}>
           {startShowLoader && <StartLoader />}
-          <ul className="imageGallery">
+          <ul className={css.imageGallery}>
               {items.length > 0 && items.map(( item, index ) => (
                 <ImageGalleryItem key={index} oncl={startShowLoader} item={item} />
               ))}
@@ -77,4 +78,11 @@ export const ImageGallery = ({ query, disable }) => {
       )
 }
 
-
+ImageGallery.propTypes = {
+  items: PropTypes.number,
+  startShowLoader: PropTypes.array,
+  showLoadBtn: PropTypes.bool,
+  showLoader: PropTypes.bool,
+  page: PropTypes.bool,
+  disableLoaderBtn: PropTypes.string,
+};

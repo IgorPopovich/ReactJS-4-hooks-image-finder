@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import {Searchbar} from './Searchbar/Searchbar';
 import {ImageGallery} from './ImageGallery/ImageGallery';
-import './App.css';
+import PropTypes from 'prop-types';
+import css from './App.module.css';
 
 export const App = () => {
   const [query, setQuery] = useState('');
@@ -20,3 +21,8 @@ export const App = () => {
     )
   
 }
+
+App.propTypes = {
+  query: PropTypes.string,
+  disableBtn: PropTypes.bool,
+};

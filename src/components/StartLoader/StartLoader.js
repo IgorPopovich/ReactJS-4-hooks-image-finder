@@ -1,4 +1,4 @@
-import './StartLoader.css';
+import css from './StartLoader.module.css';
 
 const StartLoader = () => {
     return (

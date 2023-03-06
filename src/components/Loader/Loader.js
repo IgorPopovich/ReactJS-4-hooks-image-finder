@@ -1,8 +1,8 @@
-import './Loader.css';
+import css from './Loader.module.css';
 
 const Loader = () => {
     return (
-      <div id="loader"></div>
+      <div id={css.loader}></div>
   );
 };
 

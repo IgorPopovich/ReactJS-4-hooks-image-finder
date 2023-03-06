@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Notiflix from 'notiflix';
-import './Searchbar.css';
+import css from './Searchbar.module.css';
+import PropTypes from 'prop-types';
 
 export const Searchbar = ({ onSubmit, onDisable }) => {
   const [query, setQuery] = useState('');
@@ -19,14 +20,14 @@ export const Searchbar = ({ onSubmit, onDisable }) => {
       }
 
   return (
-          <header className="searchbar">
-             <form className="searchForm" onSubmit={handleSubmit}>
-              <button disabled={onDisable} type="submit" className="searchForm-button">
-                <span className="searchForm-button-label">Search</span>
+          <header className={css.searchBar}>
+             <form className={css.searchForm} onSubmit={handleSubmit}>
+              <button disabled={onDisable} type="submit" className={css.searchFormButton}>
+                <span className={css.searchFormButtonLabel}>Search</span>
                 <img src='https://w7.pngwing.com/pngs/739/993/png-transparent-computer-icons-google-search-search-miscellaneous-desktop-wallpaper-android-thumbnail.png' alt="" />
               </button>
           
-              <input className="searchForm-input"
+              <input className={css.searchFormInput}
                 onChange={handleNameChange}
                 value={query}
                 type="text" name="query" 
@@ -36,3 +37,7 @@ export const Searchbar = ({ onSubmit, onDisable }) => {
           </header>
     )
 }
+
+Searchbar.propTypes = {
+  query: PropTypes.string,
+};
