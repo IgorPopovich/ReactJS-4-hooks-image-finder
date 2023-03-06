@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ReactJS-4-hooks-image-finder/static/css/main.810284e8.css",
-    "main.js": "/ReactJS-4-hooks-image-finder/static/js/main.8c14fb66.js",
+    "main.css": "/ReactJS-4-hooks-image-finder/static/css/main.02a1f264.css",
+    "main.js": "/ReactJS-4-hooks-image-finder/static/js/main.14153375.js",
     "index.html": "/ReactJS-4-hooks-image-finder/index.html",
-    "main.810284e8.css.map": "/ReactJS-4-hooks-image-finder/static/css/main.810284e8.css.map",
-    "main.8c14fb66.js.map": "/ReactJS-4-hooks-image-finder/static/js/main.8c14fb66.js.map"
+    "main.02a1f264.css.map": "/ReactJS-4-hooks-image-finder/static/css/main.02a1f264.css.map",
+    "main.14153375.js.map": "/ReactJS-4-hooks-image-finder/static/js/main.14153375.js.map"
   },
   "entrypoints": [
-    "static/css/main.810284e8.css",
-    "static/js/main.8c14fb66.js"
+    "static/css/main.02a1f264.css",
+    "static/js/main.14153375.js"
   ]
 }
