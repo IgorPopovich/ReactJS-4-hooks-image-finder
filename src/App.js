@@ -23,6 +23,9 @@ function App() {
     const fetchImages = async () => {
       setShowLoader(true)
       setShowLoaderBtn(true)
+      if (page < 2) {
+        setLoadMore(false)
+      }
       try {
         const request = await apiService(query, page);
         if (request.hits.length === 0) {
