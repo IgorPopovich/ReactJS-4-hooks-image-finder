@@ -1,16 +1,18 @@
-import React from 'react';
+import PropTypes from 'prop-types';
+import LoaderButton from '../LoaderButton'
 import css from './Button.module.css';
-import Loader from '../Loader/Loader';
 
-export const Button = ({ loadPlus, show, onDisable }) => {
+function Button({ onLoadMore, show }) {
+  return (
+    <button type="button" className={css.button} onClick={onLoadMore}>
+      {show && <LoaderButton />}
+      <span className={css.submitSpan}>Load more</span>
+    </button>
+  );
+}
 
-    return (
-      <button disabled={onDisable} type='submit' onClick={loadPlus} className={css.button}>
-        {show && <Loader />}
-        
-        <span className={css.submitSpan}>Load more</span>
-      </button>
-    )
-  };
-  
+Button.propTypes = {
+  onLoadMore: PropTypes.func.isRequired,
+};
 
+export default Button;

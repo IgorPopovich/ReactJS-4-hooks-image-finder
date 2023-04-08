@@ -1,8 +1,13 @@
+
 import css from './Loader.module.css';
 
 const Loader = () => {
-    return (
-      <div id={css.loader}></div>
+  return (
+    <div className={css.StartLoaderContainer}>
+    <p className={css.loadingTitle}>Loading...</p>
+    <div className={css.StartLoader}>
+    </div>
+</div>
   );
 };
 
