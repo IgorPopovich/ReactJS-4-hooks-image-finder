@@ -77,7 +77,7 @@ function App() {
 
   return (
     <Container>
-      <Searchbar onHandleSubmit={searchImages} />
+      <Searchbar prevQuery={query} onHandleSubmit={searchImages} />
 
       {showLoader && <Loader />}
 

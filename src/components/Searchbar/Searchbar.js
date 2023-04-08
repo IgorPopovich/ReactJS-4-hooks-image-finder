@@ -4,13 +4,17 @@ import css from './Searchbar.module.css';
 import Notiflix from 'notiflix';
 import { FiSearch } from 'react-icons/fi';
 
-function Searchbar({ onHandleSubmit }) {
+function Searchbar({ onHandleSubmit, prevQuery }) {
   const [query, setQuery] = useState('');
 
   const onSubmit = e => {
     e.preventDefault();
+    if (prevQuery === query) {
+      setQuery('');
+      return Notiflix.Notify.failure(`Ви ввели попереднє значення в поле"Search", спробуйте інше слово`);
+    }
     if (query.trim() === '') {
-      return Notiflix.Notify.failure(`Поле "Search" пусто`);
+      return Notiflix.Notify.failure(`Поле "Search" порожнє`);
     }
     onHandleSubmit(query);
     setQuery('');
