@@ -26,7 +26,7 @@ function App() {
       try {
         const request = await apiService(query, page);
         if (request.hits.length === 0) {
-          setShowLoaderBtn(false)
+          setLoadMore(false)
           return Notiflix.Notify.failure(`Даних по запиту "${query}" немає`);
         }
         if (page === 1) {
