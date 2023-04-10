@@ -46,7 +46,6 @@ function App() {
     };
 
     fetchImages();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, query]);
 
   const searchImages = newSearch => {
