@@ -16,13 +16,11 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [loadMore, setLoadMore] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
-  const [showLoaderBtn, setShowLoaderBtn] = useState(false);
 
   useEffect(() => {
     if (!query) return;
     const fetchImages = async () => {
       setShowLoader(true)
-      setShowLoaderBtn(true)
       if (page < 2) {
         setLoadMore(false)
       }
@@ -41,12 +39,10 @@ function App() {
         Notiflix.Notify.failure(`Помилка! Спробуйте ще раз...`);
       } finally {
         setShowLoader(false)
-        setShowLoaderBtn(false)
       }
     };
 
     fetchImages();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, query]);
 
   const searchImages = newSearch => {
@@ -89,7 +85,7 @@ function App() {
       }
 
       {loadMore && (
-        <Button onLoadMore={onLoadMore} show={showLoaderBtn} />
+        <Button onLoadMore={onLoadMore} show={showLoader} />
       )}
 
       {showModal && (
